@@ -2,9 +2,11 @@ import streamlit as st
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
+import json
+key_dict = json.loads(st.secrets["textkey"])
 
 # Fetch the service account key JSON file contents
-cred = credentials.Certificate('sejcrets.json')
+cred = credentials.Certificate('key_dict')
 
 # Initialize the app with a service account, granting admin privileges
 if not firebase_admin._apps:
